@@ -1,4 +1,4 @@
-package com.prajwal.common
+package com.psg.common
 
 import android.util.Base64
 import javax.crypto.Cipher

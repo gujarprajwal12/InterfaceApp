@@ -3,13 +3,13 @@ package com.psg.interfaceapp
 import android.app.Service
 import android.content.*
 import android.os.IBinder
+import com.psg.communication.IMessageService
+
 
 class InterfaceService : Service() {
 
     private var remote: IMessageService? = null
-
     private val connection = object : ServiceConnection {
-
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
             remote = IMessageService.Stub.asInterface(binder)
         }
@@ -17,9 +17,6 @@ class InterfaceService : Service() {
             remote = null
         }
     }
-
-
-
 
     override fun onCreate() {
         super.onCreate()

@@ -5,6 +5,7 @@
     <queries>
         <package android:name="com.psg.serviceapp" />
     </queries>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,10 +17,22 @@
         android:theme="@style/Theme.InterfaceApp">
 
 
-        <service android:name=".InterfaceService"
-            android:exported="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-
+        <service
+            android:name=".InterfaceService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.psg.serviceapp.IMessageService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

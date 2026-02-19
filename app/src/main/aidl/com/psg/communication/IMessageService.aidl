@@ -1,7 +1,5 @@
-package com.psg.interfaceapp;
+package com.psg.communication;
 
 interface IMessageService {
     String sendMessage(String encryptedMessage);
 }
-
-
